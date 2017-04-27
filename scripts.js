@@ -38,7 +38,8 @@ function Jukebox (name) {
 		audio.play();
 	}
 	function nextSong() {
-		var currentSong = this.songs[1];
+		var nextTrack = this.currentTrack + 1;
+		var currentSong = this.songs[nextTrack];
 		audio.src = currentSong.source;
 		audio.play();
 	}
@@ -63,7 +64,7 @@ document.getElementById("button3").addEventListener("click", function(){
 	roomJukebox.stopSong(roomJukebox.currentTrack)
 	});
 document.getElementById("button4").addEventListener("click", function(){
-	roomJukebox.resumeSong()
+	roomJukebox.resumeSong(roomJukebox.currentTrack)
 	});
 document.getElementById("button5").addEventListener("click", function(){
 	roomJukebox.nextSong()
